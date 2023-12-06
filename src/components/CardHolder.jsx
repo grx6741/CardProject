@@ -4,7 +4,7 @@ const CardHolderColumns = ({ images }) => {
     return (
         <div className="mx-auto">
             {images.map((image, i) => 
-                    <div className="p-3" key={i}>
+                    <div className="p-2" key={i}>
                         <Card image={image} />
                     </div>
                 )}
@@ -13,7 +13,7 @@ const CardHolderColumns = ({ images }) => {
 }
 
 const CardHolder = ({ images }) => {
-    const columns_count = 6
+    const columns_count = 5
 
     // get roughly number of images per column
     const len = images.length / columns_count;
@@ -23,11 +23,12 @@ const CardHolder = ({ images }) => {
     // Could do it better than just putting them sequentially into an array
     for (var i = 0; i < images.length; i += len) {
         array_of_images.push(images.slice(i, i + len));
+        console.log(array_of_images);
     }
 
     return (
         // Main Container that holds {columns_count} columns of Cards
-        <div id="MainContainer" className="bg-gray-900 min-h-screen m-3 rounded-lg flex flex-row">
+        <div id="MainContainer" className="bg-gray-900 min-h-screen flex flex-row">
             { array_of_images.map((images, i) => <CardHolderColumns key={i} images={images}/>) }
         </div>
     );
