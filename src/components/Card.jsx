@@ -46,11 +46,11 @@ const Card = ({ image }) => {
                 Done 
                 Used React FreezeFrame
             */}
-            <div>
+            <div className="relative">
                 <Content src={image} hovering={hovering}/>
-                <div className="flex justify-between bg-transparent rounded-sm bg-cyan-200  backdrop-blur-sm backdrop-brightness-50 bottom-3" >
-                    <Icon ActiveClass = {"icon-heart"} InactiveClass = {"icon-heart-empty"}/>
-                    <Icon ActiveClass = {"icon-doc-text-inv"} InactiveClass = {"icon-doc-text"} refreshable={true}/>
+                <div className={`absolute right-0 bottom-0 ${hovering ? "bg-gradient-to-l from-gray-900 to-transparent" : ""}`} >
+                    <Icon ActiveClass = {"icon-heart"} InactiveClass = {"icon-heart-empty"} hovering={hovering}/>
+                    <Icon ActiveClass = {"icon-doc-text-inv"} InactiveClass = {"icon-doc-text"} refreshable={true} hovering={hovering}/>
                 </div>
             </div>
             <div className={`items-center justify-between p-2 bg-gray-100  ${hovering && !click ? "flex" : "hidden"}`}>

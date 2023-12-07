@@ -6,7 +6,7 @@ const getFileType = (src) => {
     const fileExtension = src.split(".").pop();
 
     // Map file extensions to corresponding types
-    const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp'];
+    const imageExtensions = ['jpg', 'jpeg', 'png', 'bmp'];
     const videoExtensions = ['mp4', 'avi', 'mkv', 'mov', 'wmv'];
     const gifExtensions = ['gif'];
 
@@ -24,11 +24,14 @@ const getFileType = (src) => {
 const Content = ({ src, hovering }) => {
     const [fileType, fileExtension] = getFileType(src);
     const videoRef = useRef(null);
+    const style = `w-auto object-cover object-center  ${hovering ? "opacity-90 " : "opacity-100"}`;
     let content;
+
+
     if (fileType === 'Image') {
 
         content = <img
-            className={`w-auto object-cover object-center  ${hovering ? "opacity-90 " : "opacity-100"}`}
+            className={style}
             src={src}
             alt="Card"
         />
@@ -48,7 +51,7 @@ const Content = ({ src, hovering }) => {
             video.pause();
         };
 
-        content = <div className={`w-auto object-cover object-center m-0 p-0 ${hovering ? "opacity-90 " : "opacity-100"}`}>
+        content = <div className={style}>
             <video 
                 width="auto"
                 ref={videoRef} 
@@ -62,7 +65,7 @@ const Content = ({ src, hovering }) => {
     } else if (fileType === 'GIF') {
 
         content = <ReactFreezeframe 
-            className={`w-auto object-cover object-center m-0 p-0 ${hovering ? "opacity-90 " : "opacity-100"}`}
+            className={style}
             src={src}
             alt="Card"
             options={{
