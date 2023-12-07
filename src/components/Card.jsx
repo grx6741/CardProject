@@ -1,13 +1,15 @@
 // Fix you tabs
 // Put it to 4 spaces
 // Its 4 spaces bro but when I copy paste I dont always fix indent
-import { useState,useEffect } from "react";
+import { useState,useEffect,useRef } from "react";
 import ReactFreezeframe from 'react-freezeframe';
+import MyFreezeCanvas from "./MyFreezeCanvas";
 
 const Card = ({ image }) => {
     const [hovering, SetHovering] = useState(false);
     const [click,setClick] = useState(false);
     const [animatable,SetAnimatable] = useState(false); 
+    const [imageLoaded,setImageLoaded] = useState(false);
 
     const format = image.split(".").pop();
     const withoutFormat = image.substring(0,image.length - format.length);
@@ -15,19 +17,26 @@ const Card = ({ image }) => {
     //if not hovering set click to false
     useEffect(() => {
         if(hovering == false)
-            setClick(false);
+            setClick(false);  
     },[hovering]);
 
-
+    const gifImage = new Image();
+    
     //Check if ending with .gif then set it as animatable
     useEffect(() => {
-        if (format === "gif")
-        {
+        if (format == "gif")
+        {   
             SetAnimatable(true);
+            gifImage.src = image;
+            console.log(gifImage);
+            // gifImage.onload = () => {
+            //     setImageLoaded(true);
+            // }
         }
     }, [format]);
 
-
+    // console.log(imageLoaded);
+   
     return (
         <div 
             className="max-w-2xl bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transition-transform"
@@ -42,16 +51,9 @@ const Card = ({ image }) => {
                 Done 
                 Used React FreezeFrame
             */}
-            {animatable?
-                <ReactFreezeframe 
-                    className={`w-auto object-cover object-center m-0 p-0 ${hovering ? "opacity-90 " : "opacity-100"}`}
-                    src={image}
-                    alt="Card"
-                    options={{
-                        overlay: false,
-                        trigger: 'hover'
-                    }}
-                />
+
+            {animatable && !hovering?
+                <MyFreezeCanvas _image={image} _class={`w-auto object-cover object-center  ${hovering ? "opacity-90 " : "opacity-100"}`}/>
             :
                 <img
                     // Change opacity based on mouse hover
