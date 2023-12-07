@@ -2,6 +2,7 @@ import CardHolder from "./components/CardHolder"
 
 export default function App() {
     const images = [
+        "https://www.w3schools.com/html/mov_bbb.mp4",
         "https://i.imgur.com/5yeBVeM.jpeg",
         "https://i.imgur.com/dCS4tQk.jpeg",
         "https://i.imgur.com/UieUlMQ.jpeg",

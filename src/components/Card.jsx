@@ -2,6 +2,7 @@
 // Put it to 4 spaces
 // Its 4 spaces bro but when I copy paste I dont always fix indent
 import { useState,useEffect } from "react";
+import Content from "./Content";
 import ReactFreezeframe from 'react-freezeframe';
 
 const Card = ({ image }) => {
@@ -42,25 +43,26 @@ const Card = ({ image }) => {
                 Done 
                 Used React FreezeFrame
             */}
-            {animatable?
-                <ReactFreezeframe 
-                    className={`w-auto object-cover object-center m-0 p-0 ${hovering ? "opacity-90 " : "opacity-100"}`}
-                    src={image}
-                    alt="Card"
-                    options={{
-                        overlay: false,
-                        trigger: 'hover'
-                    }}
-                />
-            :
-                <img
-                    // Change opacity based on mouse hover
-                    className={`w-auto object-cover object-center  ${hovering ? "opacity-90 " : "opacity-100"}`}
-                    src={image}
-                    // src="https://placekitten.com/400/200"
-                    alt="Card"
-                />
-            }
+            {/* {animatable? */}
+            {/*     <ReactFreezeframe  */}
+            {/*         className={`w-auto object-cover object-center m-0 p-0 ${hovering ? "opacity-90 " : "opacity-100"}`} */}
+            {/*         src={image} */}
+            {/*         alt="Card" */}
+            {/*         options={{ */}
+            {/*             overlay: false, */}
+            {/*             trigger: 'hover' */}
+            {/*         }} */}
+            {/*     /> */}
+            {/* : */}
+            {/*     <img */}
+            {/*         // Change opacity based on mouse hover */}
+            {/*         className={`w-auto object-cover object-center  ${hovering ? "opacity-90 " : "opacity-100"}`} */}
+            {/*         src={image} */}
+            {/*         // src="https://placekitten.com/400/200" */}
+            {/*         alt="Card" */}
+            {/*     /> */}
+            {/* } */}
+            <Content src={image} hovering={hovering}/>
             <div className={`items-center justify-between p-2 bg-gray-100  ${hovering && !click ? "flex" : "hidden"}`}>
                 <p className="text-gray-500 text-sm">Posted on December 6, 2023</p>
             </div>
