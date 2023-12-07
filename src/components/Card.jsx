@@ -1,9 +1,12 @@
 // Fix you tabs
 // Put it to 4 spaces
 // Its 4 spaces bro but when I copy paste I dont always fix indent
+import { hover } from "@testing-library/user-event/dist/hover";
 import { useState,useEffect } from "react";
 import Content from "./Content";
 import ReactFreezeframe from 'react-freezeframe';
+import Icon from "./Icon";
+import '../Fonts/css/fontello.css'
 
 const Card = ({ image }) => {
     const [hovering, SetHovering] = useState(false);
@@ -43,26 +46,13 @@ const Card = ({ image }) => {
                 Done 
                 Used React FreezeFrame
             */}
-            {/* {animatable? */}
-            {/*     <ReactFreezeframe  */}
-            {/*         className={`w-auto object-cover object-center m-0 p-0 ${hovering ? "opacity-90 " : "opacity-100"}`} */}
-            {/*         src={image} */}
-            {/*         alt="Card" */}
-            {/*         options={{ */}
-            {/*             overlay: false, */}
-            {/*             trigger: 'hover' */}
-            {/*         }} */}
-            {/*     /> */}
-            {/* : */}
-            {/*     <img */}
-            {/*         // Change opacity based on mouse hover */}
-            {/*         className={`w-auto object-cover object-center  ${hovering ? "opacity-90 " : "opacity-100"}`} */}
-            {/*         src={image} */}
-            {/*         // src="https://placekitten.com/400/200" */}
-            {/*         alt="Card" */}
-            {/*     /> */}
-            {/* } */}
-            <Content src={image} hovering={hovering}/>
+            <div>
+                <Content src={image} hovering={hovering}/>
+                <div className="flex justify-between bg-transparent rounded-sm bg-cyan-200  backdrop-blur-sm backdrop-brightness-50 bottom-3" >
+                    <Icon ActiveClass = {"icon-heart"} InactiveClass = {"icon-heart-empty"}/>
+                    <Icon ActiveClass = {"icon-doc-text-inv"} InactiveClass = {"icon-doc-text"} refreshable={true}/>
+                </div>
+            </div>
             <div className={`items-center justify-between p-2 bg-gray-100  ${hovering && !click ? "flex" : "hidden"}`}>
                 <p className="text-gray-500 text-sm">Posted on December 6, 2023</p>
             </div>
