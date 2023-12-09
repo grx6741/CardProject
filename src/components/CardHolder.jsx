@@ -28,7 +28,7 @@ const CardHolder = ({ images }) => {
 
     return (
         // Main Container that holds {columns_count} columns of Cards
-        <div id="MainContainer" className="bg-gray-900 min-h-screen flex flex-row">
+        <div id="MainContainer" className="bg-white min-h-screen flex flex-row mx-40">
             { array_of_images.map((images, i) => <CardHolderColumns key={i} images={images}/>) }
         </div>
     );

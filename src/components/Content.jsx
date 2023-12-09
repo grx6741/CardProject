@@ -47,6 +47,7 @@ const Content = ({ src, hovering }) => {
         };
         const handleMouseLeave = () => {
             const video = videoRef.current;
+            video.currentTime = 0;
             if (!video.paused)
             video.pause();
         };
