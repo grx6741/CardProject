@@ -7,14 +7,14 @@
   "ascent": 850,
   "glyphs": [
     {
-      "uid": "f3dc2d6d8fe9cf9ebff84dc260888cdf",
-      "css": "heart-empty",
+      "uid": "d73eceadda1f594cec0536087539afbf",
+      "css": "heart",
       "code": 59392,
       "src": "fontawesome"
     },
     {
-      "uid": "d73eceadda1f594cec0536087539afbf",
-      "css": "heart",
+      "uid": "f3dc2d6d8fe9cf9ebff84dc260888cdf",
+      "css": "heart-empty",
       "code": 59393,
       "src": "fontawesome"
     },
@@ -28,6 +28,18 @@
       "uid": "7yekfd0qlkgp6emwfbo10sjdmf8pewli",
       "css": "download",
       "code": 59395,
+      "src": "typicons"
+    },
+    {
+      "uid": "44a6b866f720a1d2b11bf05023a4e089",
+      "css": "export-outline",
+      "code": 59396,
+      "src": "typicons"
+    },
+    {
+      "uid": "wh8nbtrxjl2f67dpybsww6mri0xcaklm",
+      "css": "export",
+      "code": 59397,
       "src": "typicons"
     }
   ]

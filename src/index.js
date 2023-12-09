@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ShareBar from './components/ShareBar';
 
-//Debug
-import Download from './components/Download';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <ShareBar link={"www.google.com"}/>
     <App />
   </React.StrictMode>
 );

@@ -6,6 +6,7 @@ import Content from "./Content";
 import Icon from "./Icon";
 import '../Fonts/css/fontello.css'
 import Download from "./Download";
+import ShareBar from "./ShareBar";
 
 
 
@@ -13,14 +14,36 @@ const randInt = (a, b) => {
     return Math.ceil(a + (b - a) * Math.random());
 }
 
+function handleShare(image,hovering,share,setSharing)
+{
+    if(share)
+    {
+        return <ShareBar link={image}/>;
+    }
+    else
+    {
+        return  <Icon
+                    type={"SHARE"}
+                    shareURL ={image} setSharing = {setSharing}
+                    ActiveClass = {"icon-export"} InactiveClass = {"icon-export-outline"}
+                    hovering={hovering}/>
+    }
+}
+
+
 const Card = ({ image }) => {
     const [hovering, SetHovering] = useState(false);
     const [click,setClick] = useState(false);
+    const [share,setSharing] = useState(false);
+
 
     //if not hovering set click to false
     useEffect(() => {
         if(!hovering)
+        {
             setClick(false);
+            setSharing(false);
+        }
     },[hovering]);
 
     return (
@@ -39,7 +62,7 @@ const Card = ({ image }) => {
             */}
             <div className="relative">
                 <Content src={image} hovering={hovering}/>
-                <div className={`absolute right-0 bottom-0 ${hovering ? "bg-gradient-to-l from-gray-900 to-transparent" : ""}`} >
+                <div className={`absolute right-0 bottom-0  ${hovering ? "bg-gradient-to-l from-gray-900 to-transparent" : ""}`} >
 
                     <Icon 
                     type={"LIKE"}
@@ -51,7 +74,9 @@ const Card = ({ image }) => {
                     downloadFileName={"Random-Image"} downloadFile ={image}
                     ActiveClass = {"icon-download"} InactiveClass = {"icon-download-outline"}
                     hovering={hovering}/>
-
+                </div>
+                <div className={`absolute left-0 bottom-0 ${hovering ? "bg-gradient-to-r from-gray-900 to-transparent" : ""}`} >
+                    {handleShare(image,hovering,share,setSharing)}
                 </div>
             </div>
             {/* <div className={`items-center justify-between p-2 bg-gray-100  ${hovering && !click ? "flex" : "hidden"}`}> */}

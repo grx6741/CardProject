@@ -4,7 +4,7 @@ import Download from "./Download";
 
 
 
-const Icon = ({type,downloadFileName,downloadFile,hovering, ActiveClass,InactiveClass,refreshable = false}) => {
+const Icon = ({type,shareURL,setSharing,downloadFileName,downloadFile,hovering, ActiveClass,InactiveClass,refreshable = false}) => {
     
     const handleClick = () =>{
         
@@ -17,6 +17,7 @@ const Icon = ({type,downloadFileName,downloadFile,hovering, ActiveClass,Inactive
                 Download(downloadFileName,downloadFile);
                 break;
             case "SHARE":
+                setSharing(true);
                 break;
         }
     };
