@@ -4,7 +4,10 @@
 import { useState,useEffect } from "react";
 import Content from "./Content";
 import Icon from "./Icon";
-import '../Fonts/css/fontello.css'
+import '../Font/css/fontello.css'
+import Download from "./Download";
+
+
 
 const randInt = (a, b) => {
     return Math.ceil(a + (b - a) * Math.random());
@@ -37,9 +40,18 @@ const Card = ({ image }) => {
             <div className="relative">
                 <Content src={image} hovering={hovering}/>
                 <div className={`absolute right-0 bottom-0 ${hovering ? "bg-gradient-to-l from-gray-900 to-transparent" : ""}`} >
-                    <Icon ActiveClass = {"icon-heart"} InactiveClass = {"icon-heart-empty"} hovering={hovering}/>
-                    <br />
-                    <Icon ActiveClass = {"icon-doc-text-inv"} InactiveClass = {"icon-doc-text"} refreshable={true} hovering={hovering}/>
+
+                    <Icon 
+                    type={"LIKE"}
+                    ActiveClass = {"icon-heart"} InactiveClass = {"icon-heart-empty"} 
+                    hovering={hovering}/>
+                    <br/>
+                    <Icon 
+                    type={"DOWNLOAD"}
+                    downloadFileName={"Random-Image"} downloadFile ={image}
+                    ActiveClass = {"icon-download"} InactiveClass = {"icon-download-outline"}
+                    hovering={hovering}/>
+
                 </div>
             </div>
             {/* <div className={`items-center justify-between p-2 bg-gray-100  ${hovering && !click ? "flex" : "hidden"}`}> */}
