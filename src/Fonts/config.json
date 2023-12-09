@@ -19,16 +19,16 @@
       "src": "fontawesome"
     },
     {
-      "uid": "1189604bf305b6b03a74685ce60e6632",
-      "css": "doc-text",
+      "uid": "86157b2f942e37940f8702a4a3221a2b",
+      "css": "download-outline",
       "code": 59394,
-      "src": "entypo"
+      "src": "typicons"
     },
     {
-      "uid": "1d7c1d30ad49a988556273a238097c2a",
-      "css": "doc-text-inv",
+      "uid": "7yekfd0qlkgp6emwfbo10sjdmf8pewli",
+      "css": "download",
       "code": 59395,
-      "src": "entypo"
+      "src": "typicons"
     }
   ]
 }

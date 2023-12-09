@@ -4,7 +4,7 @@
 import { useState,useEffect } from "react";
 import Content from "./Content";
 import Icon from "./Icon";
-import '../Font/css/fontello.css'
+import '../Fonts/css/fontello.css'
 import Download from "./Download";
 
 

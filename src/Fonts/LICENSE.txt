@@ -10,12 +10,12 @@ Font license info
    Homepage:  http://fortawesome.github.com/Font-Awesome/
 
 
-## Entypo
+## Typicons
 
-   Copyright (C) 2012 by Daniel Bruce
+   (c) Stephen Hutchings 2012
 
-   Author:    Daniel Bruce
+   Author:    Stephen Hutchings
    License:   SIL (http://scripts.sil.org/OFL)
-   Homepage:  http://www.entypo.com
+   Homepage:  http://typicons.com/
 
 
