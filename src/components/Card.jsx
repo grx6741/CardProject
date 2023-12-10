@@ -69,7 +69,7 @@ const Card = ({ game }) => {
             setImage(game.images[currentImageIndex]);
             setDisplay("blur-0");
         }, 150);
-        return () => clearTimeout(timer);        setDisplay("opacity-90");
+        return () => clearTimeout(timer);        
     },[currentImageIndex]);
 
     const onLeftButtonClick = () => {
