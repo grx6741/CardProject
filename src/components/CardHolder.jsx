@@ -1,12 +1,12 @@
 import Card from "./Card";
 
-const CardHolderColumns = ({ images }) => {
+const CardHolderColumns = ({ games }) => {
     return (
         <div className="mx-auto">
             {
-                images.map((image, i) =>
+                games.map((game, i) =>
                     <div className="p-2" key={i}>
-                        <Card image={image} />
+                        <Card game={game} />
                     </div>
                 )
             }
@@ -31,7 +31,7 @@ const CardHolder = ({ images }) => {
     return (
         // Main Container that holds {columns_count} columns of Cards
         <div id="MainContainer" className="bg-white min-h-screen flex flex-row mx-40">
-            { array_of_images.map((images, i) => <CardHolderColumns key={i} images={images}/>) }
+            { array_of_images.map((images, i) => <CardHolderColumns key={i} games={images}/>) }
         </div>
     );
 }

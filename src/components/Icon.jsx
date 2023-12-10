@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Download from "./Download";
 
 const Icon = ({ type, shareURL, setSharing, downloadFileName, downloadFile, hovering, ActiveClass, InactiveClass, refreshable = false }) => {
@@ -15,7 +15,6 @@ const Icon = ({ type, shareURL, setSharing, downloadFileName, downloadFile, hove
             case "SHARE":
                 setSharing(true);
                 navigator.clipboard.writeText(window.location.href);
-                alert("Copied to Clipboard " + window.location.href);
                 break;
         }
     };
