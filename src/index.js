@@ -9,7 +9,6 @@ import ShareBar from './components/ShareBar';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ShareBar link={"www.google.com"}/>
     <App />
   </React.StrictMode>
 );

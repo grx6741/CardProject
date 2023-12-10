@@ -119,9 +119,9 @@ const Card = ({ game }) => {
             {/* Popout the description on click */}
             {/* <div className={`p-4 ${click ? "block" : "hidden"}`}> */}
             <div className={`p-4 block`}>
-                <h2 className="text-xl font-semibold text-gray-800">Card Title</h2>
+                <h2 className="text-xl font-semibold text-gray-800">{game.name}</h2>
                 <p className="mt-2 text-gray-600">
-                    Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet.
+                {game.desc}
                 </p>
             </div>
         </div>
