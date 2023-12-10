@@ -21,10 +21,10 @@ const getFileType = (src) => {
     }
 }
 
-const Content = ({ src, hovering }) => {
+const Content = ({ src, hovering,display }) => {
     const [fileType, fileExtension] = getFileType(src);
     const videoRef = useRef(null);
-    const style = `w-auto object-cover object-center  ${hovering ? "opacity-90 " : "opacity-100"}`;
+    const style = `w-auto object-cover object-center ${display}  ${hovering ? "opacity-90" : "opacity-100"} transition-all duration-150`;
     let content;
 
 
