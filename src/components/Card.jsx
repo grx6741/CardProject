@@ -35,15 +35,15 @@ function handleShare(image,hovering,share,setSharing)
     }
 }
 
-const NavigationArrows = ({ onLeftButtonClick, onRightButtonClick }) => {
+const NavigationArrows = ({ onLeftButtonClick, onRightButtonClick,hovering }) => {
     return (
-        <div className="text-white text-4xl ">
+        <div className={`text-white text-4xl select-none ${hovering?"opacity-100":"opacity-0"}`}>
             <button
                 className={`absolute left-0 bottom-1/2  translate-y-1/2 border-gray-400 font-outline-2 hover:font-outline-4  transition-all duration-150 "`}
                 onClick={onLeftButtonClick}
             >&larr;</button>
             <button
-                className="absolute right-0 bottom-1/2 translate-y-1/2 bg-gradient-to-l from-gray-500 to-transparent hover:text-5xl transition-all duration-150"
+                className={`absolute right-0 bottom-1/2  translate-y-1/2 border-gray-400 font-outline-2 hover:font-outline-4  transition-all duration-150 "`}
                 onClick={onRightButtonClick}
             >&rarr;</button>
         </div>
@@ -58,18 +58,15 @@ const Card = ({ game }) => {
     const [click, setClick] = useState(false);
     const [share,setSharing] = useState(false);
     const [display,setDisplay] = useState("blur-0");
-    // const image = game.images[currentImageIndex];
 
     const [image,setImage] = useState(game.images[currentImageIndex]);
 
-
-
     useEffect(()=>{
+        setImage(game.images[currentImageIndex]);
         const timer = setTimeout(() => {
-            setImage(game.images[currentImageIndex]);
             setDisplay("blur-0");
         }, 150);
-        return () => clearTimeout(timer);        
+        return () => clearTimeout(timer);
     },[currentImageIndex]);
 
     const onLeftButtonClick = () => {
@@ -104,6 +101,7 @@ const Card = ({ game }) => {
             <div className="relative">
                 <Content src={image} display={display} hovering={hovering}/>
                 <NavigationArrows
+                    hovering = {hovering}
                     onLeftButtonClick={onLeftButtonClick}
                     onRightButtonClick={onRightButtonClick}
                     />
