@@ -56,7 +56,7 @@ const Content = ({ src, hovering }) => {
             <video 
                 width="auto"
                 ref={videoRef} 
-                onMouseEnter={handleMouseEnter}
+                onMouseOver={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
                 <source src={src} type={`video/${fileExtension}`}></source>

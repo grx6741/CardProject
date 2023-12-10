@@ -5,9 +5,7 @@ import { useState,useEffect } from "react";
 import Content from "./Content";
 import Icon from "./Icon";
 import '../Fonts/css/fontello.css'
-import Download from "./Download";
 import ShareBar from "./ShareBar";
-
 
 
 const randInt = (a, b) => {
@@ -24,9 +22,12 @@ function handleShare(image,hovering,share,setSharing)
     {
         return  <Icon
                     type={"SHARE"}
-                    shareURL ={image} setSharing = {setSharing}
-                    ActiveClass = {"icon-export"} InactiveClass = {"icon-export-outline"}
-                    hovering={hovering}/>
+                    shareURL ={image}
+                    setSharing = {setSharing}
+                    ActiveClass = {"icon-export"}
+                    InactiveClass = {"icon-export-outline"}
+                    hovering={hovering}
+                />
     }
 }
 
@@ -53,27 +54,25 @@ const Card = ({ image }) => {
             onMouseLeave={() => SetHovering(false)}
             onClick={() => setClick(true)}
         >
-            {/* Uncomment for separate image in Card I am trying to do image as background  also check if GIFS work*/}     
-            {/* ****                 
-                For GIFs to play only on hover,
-                Make Sure src have a .gif ending
-                Done 
-                Used React FreezeFrame
-            */}
             <div className="relative">
                 <Content src={image} hovering={hovering}/>
                 <div className={`absolute right-0 bottom-0  ${hovering ? "bg-gradient-to-l from-gray-900 to-transparent" : ""}`} >
 
                     <Icon 
-                    type={"LIKE"}
-                    ActiveClass = {"icon-heart"} InactiveClass = {"icon-heart-empty"} 
-                    hovering={hovering}/>
+                        type={"LIKE"}
+                        ActiveClass = {"icon-heart"}
+                        InactiveClass = {"icon-heart-empty"}
+                        hovering={hovering}
+                    />
                     <br/>
-                    <Icon 
-                    type={"DOWNLOAD"}
-                    downloadFileName={"Random-Image"} downloadFile ={image}
-                    ActiveClass = {"icon-download"} InactiveClass = {"icon-download-outline"}
-                    hovering={hovering}/>
+                    <Icon
+                        type={"DOWNLOAD"}
+                        downloadFileName={"Random-Image"}
+                        downloadFile ={image}
+                        ActiveClass = {"icon-download"}
+                        InactiveClass = {"icon-download-outline"}
+                        hovering={hovering}
+                    />
                 </div>
                 <div className={`absolute left-0 bottom-0 ${hovering ? "bg-gradient-to-r from-gray-900 to-transparent" : ""}`} >
                     {handleShare(image,hovering,share,setSharing)}

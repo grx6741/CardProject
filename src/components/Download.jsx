@@ -4,8 +4,7 @@
 //But from reading it seams that you need fetch video byte by byte and need server end scripting to efficiently download
 //If Cors is allowed we can download most small videos and games as well
 //Checkout this thread : https://stackoverflow.com/questions/71829361/how-to-download-mp4-video-in-js-react
-function Download(name,link)
-{
+const Download = (name,link) => {
     const a = document.createElement('a');
     a.download = name.toString();
 
@@ -25,7 +24,5 @@ function Download(name,link)
     {
         console.error("Link is null");
     }
-
-    
 }
 export default Download;

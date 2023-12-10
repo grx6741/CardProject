@@ -3,11 +3,13 @@ import Card from "./Card";
 const CardHolderColumns = ({ images }) => {
     return (
         <div className="mx-auto">
-            {images.map((image, i) => 
+            {
+                images.map((image, i) =>
                     <div className="p-2" key={i}>
                         <Card image={image} />
                     </div>
-                )}
+                )
+            }
         </div>
     );
 }
